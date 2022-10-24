@@ -1,0 +1,370 @@
+<!--    George Mason University         -->
+<!---------------------------------------->
+<!--  Author     : Ramaswamy Iyappan    -->
+<!--  G#         : G01348097            -->
+<!--  Course     :  SWE-642             -->
+<!--  Homework   :  2                   -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS Department Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Jquery file links -->
+<script src="jquery-3.6.1.js"></script>
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<link href="jquery-ui.css" rel="stylesheet">
+
+<!-- Custom Javascript & CSS-->
+<script src="script.js"></script>
+<link href="style.css" rel="stylesheet">
+</head>
+
+<!-- Calls cookie() after page is loaded successfully-->
+<body class="w3-light-gray" onload="cookie();">
+
+    <!-- Tabs -->
+    <div id="tabs">
+      <ul>
+          <li><a href="#tabs-1">Survey Page</a></li>
+          <li><a href="#tabs-2">Volgenau School</a></li>
+      </ul>
+
+      <!-- TAB1 -->
+      <div id="tabs-1">
+
+        <!-- Header Logo -->
+        <header>
+          <div class="w3-row w3-center w3-padding">
+            <div class="w3-container" style="width: 100%">
+                <a href="https://cs.gmu.edu/">
+                    <img src="CSlogo.png" alt="GMU CS Department">
+                </a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Whole body inside this container -->
+        <div class="w3-container">
+
+          <!-- Title -->
+          <center>
+            <h1 class="w3-container w3-padding title-shadow"><b>Computer Science Department Survey Form</b></h1><hr>
+
+            <!-- div placeholder to greet the user based on cookies -->
+            <h3 id="greet"></h3>
+
+            <h3 style="padding-top: 15px">Please spare a few minutes to fill in this survey and let us know how you feel about being here at Mason.</h3>
+          </center>
+
+          <!-- Form starts from here -->
+          <form id="survey-form" autocomplete="on">
+            <div id="dialog"></div>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label>Name<span style="color:red">*</span></label>
+                <input
+                id="username"
+                type="text"
+                class="form-control"
+                placeholder="Enter your name"
+                autofocus
+                required
+                />
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label>Email<span style="color:red">*</span></label>
+                <input
+                id="email"
+                type="email"
+                class="form-control"
+                placeholder="Enter your Email"
+                required
+                />
+            </div>
+
+            <!-- Age -->
+            <div class="form-group" style="width: 400px; float: left;">
+                <label>Age (optional)</label>
+                <input
+                type="number"
+                min="10"
+                max="99"
+                class="form-control"
+                placeholder="Age"
+                />
+            </div>
+
+            <!-- Date -->
+            <div class="form-group" style="width: 400px; float: right;">
+                <label>Date of Survey</label>
+                <input
+                type="date"
+                class="form-control"
+                />
+            </div>
+
+            <!-- Address -->
+            <div class="form-group" style="margin-top: 120px;">
+                <label>Street Address<span style="color:red">*</span></label>
+                <input
+                id="address"
+                type="text"
+                class="form-control"
+                placeholder="Enter your Street Address"
+                required
+                />
+            </div>
+
+            <!-- ZIP -->
+            <div class="form-group" style="width: 400px; float: left;">
+                <label>ZIP Code</label>
+                <input
+                id="zipcode"
+                type="number"
+                pattern="^\d{5}(?:[-\s]\d{4})?$"
+                class="form-control"
+                placeholder="ZIP"
+                onblur="validateZip(this.value);"
+                />
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group" style="width: 400px; float: right;">
+                <label>Phone Number</label>
+                <input
+                type="tel"
+                class="form-control"
+                placeholder="(571) XXX-XXXX"
+                />
+            </div>
+
+            <!-- div to show ZIP error -->
+            <div class="form-group" style="width: 100%; float: left; margin-bottom: -10px;">
+                <p id="ziperror" style="margin-top:-20px"></p>
+            </div>
+
+            <!-- City -->
+            <div class="form-group" style="width: 400px; float: left; margin-bottom: -15px;">
+                <label>City</label>
+                <label
+                id="city"
+                class="form-group">
+                <!-- placeholder="Example:- Fairfax" -->
+                </label>
+            </div>
+
+            <!-- State -->
+            <div class="form-group" style="width: 400px; float: right; margin-bottom: -15px;">
+                <label>State</label>
+                <label
+                id="state"
+                class="form-group"
+                ></label>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form-group" style="margin-top: 190px;">
+                <label> What did you like the most about Mason? (Check all that apply)<span style="color:red">*</span></label>
+
+                <label style="margin-top: 15px;">
+                <input
+                    name="likes"
+                    type="checkbox"
+                    class="input-checkbox"
+                />Students</label>
+                <label>
+                <input
+                    name="likes"
+                    type="checkbox"
+                    class="input-checkbox"
+                />Location</label>
+                <label>
+                <input
+                    name="likes"
+                    type="checkbox"
+                    class="input-checkbox"
+                />Campus</label>
+                <label>
+                <input
+                    name="likes"
+                    type="checkbox"
+                    class="input-checkbox"
+                />Atmosphere</label>
+                <label>
+                <input
+                    name="likes"
+                    type="checkbox"
+                    class="input-checkbox"
+                />Dorm Rooms</label>
+                <label>
+                <input
+                    name="likes"
+                    type="checkbox"
+                    class="input-checkbox"
+                />Sports</label>
+            </div>
+
+            <!-- Radio Buttons -->
+            <div class="form-group">
+                <label>How did you come to know about Mason?<span style="color:red">*</span></label>
+                <label>
+                <input
+                    name="source"
+                    type="radio"
+                    class="input-radio"
+                />Friends</label>
+                <label>
+                <input
+                    name="source"
+                    type="radio"
+                    class="input-radio"
+                />Television</label>
+                <label>
+                <input
+                    name="source"
+                    type="radio"
+                    class="input-radio"
+                />Internet</label>
+                <label>
+                <input
+                    name="source"
+                    type="radio"
+                    class="input-radio"
+                />Other</label>
+            </div>
+
+            <!-- Dropdown -->
+            <div class="form-group" style="width: 400px; float: left;">
+                <label>High School Graduation</label>
+                <select id="dropdown" class="form-control">
+                <option disabled selected value>Select Graduation Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+                </select>
+            </div>
+
+            <!-- Year -->
+            <div class="form-group" style="width: 400px; float: right;">
+                <label>Graduation Year</label>
+                <input
+                type="number"
+                class="form-control"
+                placeholder="Enter Graduation Year"
+                />
+            </div>
+
+            <!-- Likelihood Dropdown -->
+            <div class="form-group" style="margin-top: 150px;">
+                <label>Likelihood of you recommending Mason to other prospective students:</label>
+                <select id="dropdown" class="form-control">
+                <option disabled selected value>Select an option</option>
+                <option>Very Likely</option>
+                <option>Likely</option>
+                <option>Unlikely</option>
+                </select>
+            </div>
+
+            <!-- Comments -->
+            <div class="form-group">
+                <label>Comments</label>
+                <textarea
+                id="comments"
+                class="input-textarea"
+                name="comment"
+                placeholder="Enter your comment here..."
+                ></textarea>
+            </div>
+
+            <!-- Extension part for HW2 -->
+            <div class="form-group">
+                <h4><b>Extension</b></h4>
+
+                <!-- Data Field -->
+                <label>Data</label>
+                <input id="data" type="text" onblur="calc(this.value);" placeholder="1,2,..,10"/>
+                <label id="data-error"></label>
+
+                <!-- Average -->
+                <label>Average</label>
+                <label id="average"></label>
+
+                <!-- Maximum -->
+                <label>Maximum</label>
+                <label id="maximum"></label>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="form-group">
+                <button type="submit" onclick="validateForm(event);" id="submit" class="submit-button w3-hover-shadow w3-hover-green w3-yellow">
+                <span style="font-size: large; letter-spacing: 7px;">SUBMIT</span>
+                </button>
+
+                <!-- RESET -->
+                <button type="reset" id="reset" class="submit-button w3-hover-shadow w3-hover-green w3-yellow" style="margin-left: 452px; margin-top: -53.5px; width: 49%;">
+                <span style="font-size: large; letter-spacing: 7px;">RESET</span>
+                </button>
+
+            </div>
+
+          </form> <!-- Form ends -->
+
+          <!-- Bottom-Right Fixed Logo -->
+          <div class="foot w3-container">
+              <a href="https://gmu.edu/">
+                  <img style="float: right; height: 100%; margin-right: -16px;" src="gmu.png">
+              </a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="background-color: black; height: 75px; width: 100%"></footer>
+
+      </div> <!-- TAB1 Ends -->
+
+      <!-- TAB2 -->
+      <div id="tabs-2">
+
+        <h1 class="w3-container w3-padding title-shadow"><b>Volgenau College of Engineering</b></h1><hr>
+        <h2> About </h2>
+        <h4> The Volgenau School of Engineering was founded in 1985 as George Mason University’s School of Information Technology
+          and Engineering. Today, this large, multidisciplinary school maintains a dual pre-eminence in both information technology
+          and engineering. Through teaching, research, and practice, Mason Engineering seeks to graduate students who will take
+          initiative, step up, and leave the planet better than they found it.</h4><hr>
+
+        <h2>Mission Statement</h2>
+        <h4>The mission of the Volgenau School of Engineering is to provide a transformative learning experience that yields
+          visionary stewards of society who are prepared to discover solutions to complex global challenges and make the world
+          safer, cleaner, and more prosperous.<br><br>
+
+          Our faculty are engaged educators who lead high-impact research in the areas of sustainability,
+          big data, cybersecurity, robotics and artificial intelligence, and healthcare. These existing and emerging
+          areas of expertise span departmental and disciplinary boundaries and capture the depth and breadth of our faculty
+          and student’s scholarly activity.</h4>
+
+
+      </div> <!-- TAB2 Ends -->
+
+    </div> <!-- End of All Tabs -->
+</body>
+</html>
+<!-- End of Code -->
