@@ -14,4 +14,10 @@ SWE642-HW2.pdf -----> Instructions for the assignment
 
 gmu.png ---------------> University Logo
 
-Index.html -------------> Empty file for deploying the website.
+index.html -------------> Empty file for deploying the website.
+
+Necessary imports for jquery installation :-
+  - jquery-ui-3.6.1.js 
+  - jquery-ui.css 
+  - jquery-ui.js 
+  - jquery.js
