@@ -17,7 +17,11 @@ gmu.png ---------------> University Logo
 index.html -------------> Empty file for deploying the website.
 
 Necessary imports for jquery installation :-
-  - jquery-ui-3.6.1.js 
+  - jquery-3.6.1.js 
   - jquery-ui.css 
   - jquery-ui.js 
   - jquery.js
+  
+script.js ----------------> Custom Javascript main file.
+
+styles.css --------------> Custom external CSS Style sheet.
