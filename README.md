@@ -8,8 +8,10 @@ Website hosted @
   
 # Files on the Repository
 
-CS_logo.png -----------> Department Logo
+CSlogo.png ------------> Department Logo
 
 SWE642-HW2.pdf -----> Instructions for the assignment
 
 gmu.png ---------------> University Logo
+
+Index.html -------------> Empty file for deploying the website.
