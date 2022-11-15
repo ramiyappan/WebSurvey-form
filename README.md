@@ -24,4 +24,8 @@ Necessary imports for jquery installation :-
   
 script.js ----------------> Custom Javascript main file.
 
-styles.css --------------> Custom external CSS Style sheet.
+style.css ---------------> Custom external CSS Style sheet.
+
+survey.html -----------> MAIN HTML file.
+
+zipcodes.json ---------> JSON file for storing city, state and zip-code.
