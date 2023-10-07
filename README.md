@@ -2,7 +2,7 @@
 
 Designed a Web Survey form using HTML, CSS, JavaScript and jQuery UI.
 
-## Website hosted @ 
+## Website hosted @
   - http://mason.gmu.edu/~riyappan/survey.html
   - https://ramiyappan.github.io/Forms/survey.html
   
